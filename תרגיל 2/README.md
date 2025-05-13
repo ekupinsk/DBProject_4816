@@ -15,7 +15,7 @@ ALTER TABLE Customer
 ALTER COLUMN full_name SET NOT NULL;
 ```
 
-![תרגיל 2/תמונות שאילתות/constraints/אילוץ NOT NULL.png](images/אילוץ%20NOT%20NULL.png)
+[תרגיל 2/תמונות שאילתות/constraints/אילוץ NOT NULL.png](images/אילוץ%20NOT%20NULL.png)!
 
 ---
 
@@ -26,7 +26,7 @@ ALTER TABLE Dish DROP CONSTRAINT IF EXISTS chk_price_positive;
 ALTER TABLE Dish ADD CONSTRAINT chk_price_positive CHECK (price >= 0);
 ```
 
-![[אילוץ CHECK](https://github.com/ekupinsk/DBProject_4816/blob/main/%D7%AA%D7%A8%D7%92%D7%99%D7%9C%202/%D7%AA%D7%9E%D7%95%D7%A0%D7%95%D7%AA%20%D7%A9%D7%90%D7%99%D7%9C%D7%AA%D7%95%D7%AA/constraints/%D7%90%D7%99%D7%9C%D7%95%D7%A5_CHECK.png)](images/אילוץ%20CHECK.png)
+![אילוץ CHECK](images/אילוץ%20CHECK.png)
 
 ---
 
