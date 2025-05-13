@@ -16,7 +16,23 @@
 
 ---
 
-## Introduction:
+Introduction:
+
+The Restaurant Management System project is a database-driven solution aimed at organizing and tracking all the operational aspects of a restaurant. The system includes the following main entities:
+
+Customer: Holds details such as full name, phone number, email, and join date.
+
+Dish: Stores information about each dish including name, price, category (e.g., appetizer, main course), and whether it's vegan.
+
+Employee: Contains employee records including name, hire date, and salary.
+
+Restaurant Table: Represents physical tables in the restaurant with seat count, availability status, and last cleaned date.
+
+Orders: Tracks individual orders placed by customers, including date, status (e.g., completed, cancelled), assigned employee, and the table.
+
+Order Details: A junction table connecting orders to dishes, indicating quantity and special notes for each dish in an order.
+
+The system is designed to support efficient restaurant operations: managing customer service, seating arrangements, employee assignments, and real-time tracking of orders and dish preparation. With clear relationships between entities, the system ensures data consistency and supports queries for operational analysis and management decisions.
 
 The "Restaurant Management System" is designed to manage the core operations of a restaurant: handling customers, orders, employees, dishes, and dining tables. The database enables storing detailed information on all these components and allows efficient data manipulation and querying through relationships.
 
