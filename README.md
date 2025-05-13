@@ -42,6 +42,8 @@ The "Restaurant Management System" is designed to manage the core operations of 
 
 * \[✓] ERD: Entity Relationship Diagram created using ERDPlus
 * \[✓] DSD: Data Structure Diagram with table schemas, types, primary and foreign keys
+* ![ERD](ERD.png)
+* ![DSD](DSD.png)
 
 **Key Design Decisions:**
 
