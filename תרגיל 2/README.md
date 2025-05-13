@@ -78,7 +78,7 @@ WHERE table_id NOT IN (
 );
 ```
 
-![מחיקה 3](images/delete3.png)
+![תרגיל 2/תמונות שאילתות/DELETE Queries/מחיקת טבלאות שלא בשימוש.png](images/delete3.png)
 
 ---
 
