@@ -15,7 +15,7 @@ ALTER TABLE Customer
 ALTER COLUMN full_name SET NOT NULL;
 ```
 
-[תרגיל 2/תמונות שאילתות/constraints/אילוץ NOT NULL.png](images/אילוץ%20NOT%20NULL.png)!
+![תרגיל 2/תמונות שאילתות/constraints/אילוץ NOT NULL.png](images/אילוץ%20NOT%20NULL.png)
 
 ---
 
@@ -26,7 +26,7 @@ ALTER TABLE Dish DROP CONSTRAINT IF EXISTS chk_price_positive;
 ALTER TABLE Dish ADD CONSTRAINT chk_price_positive CHECK (price >= 0);
 ```
 
-![אילוץ CHECK](images/אילוץ%20CHECK.png)
+![תרגיל 2/תמונות שאילתות/constraints/אילוץ_CHECK.png](images/אילוץ%20CHECK.png)
 
 ---
 
@@ -52,7 +52,7 @@ WHERE dish_id NOT IN (
 );
 ```
 
-![מחיקה 1](images/delete1.png)
+![תרגיל 2/תמונות שאילתות/DELETE Queries/מחיקת מנות שלא הוזמנו בכלל.png](images/delete1.png)
 
 ---
 
@@ -65,7 +65,7 @@ WHERE price > 100 AND dish_id NOT IN (
 );
 ```
 
-![מחיקה 2](images/delete2.png)
+![תרגיל 2/תמונות שאילתות/DELETE Queries/מחיקת מנות יקרות שלא הוזמנו.png](images/delete2.png)
 
 ---
 
@@ -95,7 +95,7 @@ GROUP BY c.customer_id, c.full_name, c.email
 ORDER BY orders_count DESC;
 ```
 
-![select1](images/select1.png)
+![select1](תרגיל 2/תמונות שאילתות/Queries/לקוחות שהזמינו בחודש אפריל.png)
 
 ---
 
