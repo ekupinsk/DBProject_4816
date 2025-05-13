@@ -16,7 +16,7 @@
 
 ---
 
-Introduction:
+## Introduction:
 
 The Restaurant Management System project is a database-driven solution aimed at organizing and tracking all the operational aspects of a restaurant. The system includes the following main entities:
 
