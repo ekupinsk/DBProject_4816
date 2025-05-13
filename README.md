@@ -74,7 +74,8 @@ The "Restaurant Management System" is designed to manage the core operations of 
 
 ### The backup was restored on a separate machine and tested successfully 
 
-* ![backup screenshot](./backup_screenshot.png)
+* ![backup screenshot](![Uploading צילום מסך 2025-05-13 205853.png…]()
+)
 
 ---
 
