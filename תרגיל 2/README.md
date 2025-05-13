@@ -15,7 +15,7 @@ ALTER TABLE Customer
 ALTER COLUMN full_name SET NOT NULL;
 ```
 
-![אילוץ NOT NULL](images/אילוץ%20NOT%20NULL.png)
+![תרגיל 2/תמונות שאילתות/constraints/אילוץ NOT NULL.png](images/אילוץ%20NOT%20NULL.png)
 
 ---
 
