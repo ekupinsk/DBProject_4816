@@ -43,7 +43,7 @@ The "Restaurant Management System" is designed to manage the core operations of 
 * Random data generated using \[mockaroo.com]
 * Output in SQL format for `Customer` and other tables
 * Folder: `mockarooFiles/`
-* ![mockaroo screenshot](./mockarooFiles/screenshot.png)
+* ![mockaroo screenshot](mockarooFiles/Customer.png)
 
 ### 2. Python Script
 
