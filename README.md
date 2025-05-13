@@ -50,7 +50,7 @@ The "Restaurant Management System" is designed to manage the core operations of 
 * Script generates random data for all 6 tables
 * Output is SQL-compatible inserts
 * Folder: `Programing/`
-* ![python screenshot](./Programing/screenshot.png)
+* ![python screenshot](pyton_insert_random/python.png)
 
 ### 3. Manual Text File
 
