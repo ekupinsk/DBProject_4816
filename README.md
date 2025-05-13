@@ -73,7 +73,7 @@ The "Restaurant Management System" is designed to manage the core operations of 
 * Basic SQL insert script created manually
 * At least 3 rows per table
 * Folder: `dataImportFiles/`
-* ![manual insert screenshot](backup/backup1.png)
+* ![manual insert screenshot](data_Import_Files/manual_insert.png)
 
 ---
 
@@ -87,10 +87,10 @@ The "Restaurant Management System" is designed to manage the core operations of 
   * All table definitions
   * Complete dataset
   * Foreign key and primary key constraints
-
+* ![backup screenshot](backup/backup1.png)
 ### The backup was restored on a separate machine and tested successfully 
 
-* ![backup screenshot](backup/import.png)
+* ![import screenshot](backup/import.png)
 )
 
 ---
