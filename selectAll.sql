@@ -1,18 +1,7 @@
--- שליפת כל הלקוחות
+-- Select from all tables
 SELECT * FROM Customer;
-
--- שליפת כל העובדים
-SELECT * FROM Employee;
-
--- שליפת כל השולחנות
-SELECT * FROM Table;
-
--- שליפת כל המנות
 SELECT * FROM Dish;
-
--- שליפת כל ההזמנות
-SELECT * FROM "Order";
-
--- שליפת כל פרטי ההזמנות
+SELECT * FROM Employee;
+SELECT * FROM Restaurant_Table;
+SELECT * FROM Orders;
 SELECT * FROM Order_Details;
-
