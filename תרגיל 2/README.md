@@ -37,7 +37,7 @@ ALTER TABLE Restaurant_Table
 ALTER COLUMN is_available SET DEFAULT 'Y';
 ```
 
-![אילוץ DEFAULT](images/אילוץ%20DEFAULT.png)
+![תרגיל 2/תמונות שאילתות/constraints/אילוץ DEFAULT.png](images/אילוץ%20DEFAULT.png)
 
 ---
 
