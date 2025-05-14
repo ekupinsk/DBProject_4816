@@ -45,16 +45,20 @@ ALTER COLUMN is_available SET DEFAULT 'Y';
 
 ## 🗑️ חלק 2: שאילתות מחיקה (DELETE)
 
-### ❌ מחיקת מנות שלא הוזמנו כלל
+### ❌ מחיקת לקוחות שנרשמו לפני יותר מ־3 שנים, ושלא ביצעו אף הזמנה.
 
 ```sql
-DELETE FROM Dish
-WHERE dish_id NOT IN (
-  SELECT DISTINCT dish_id FROM Order_Details
-);
+DELETE FROM Customer
+WHERE join_date < CURRENT_DATE - INTERVAL '3 years'
+  AND customer_id NOT IN (SELECT customer_id FROM Orders);
 ```
+## לפני
+![DELETE 1 לפני](https://github.com/user-attachments/assets/818c0c54-3809-4500-83df-e9616d3e52e9)
+## מחיקה
+![מחיקת לקוחות שנרשמו לפני יותר מ־3 שנים, ושלא ביצעו אף הזמנה](https://github.com/user-attachments/assets/6561bad7-5550-436f-bca5-aca21d5510fe)
+## אחרי
 
-![מחיקת מנות שלא הוזמנו בכלל](https://github.com/user-attachments/assets/4c2365f8-f6a6-4291-bf67-341c1f9e1af8)
+![DELETE 1 אחרי](https://github.com/user-attachments/assets/3e1cc07a-78d2-4d1a-a214-24b7cad5a4e7)
 
 
 ---
@@ -67,8 +71,13 @@ WHERE price > 100 AND dish_id NOT IN (
   SELECT dish_id FROM Order_Details
 );
 ```
+## לפני
+![DELETE 2 לפני](https://github.com/user-attachments/assets/1b8fc3f8-e864-47a3-b8d2-7e95cb297be6)
 
+## מחיקה
 ![מחיקת מנות יקרות שלא הוזמנו](https://github.com/user-attachments/assets/4665d918-b815-4b99-9483-b3b1436b0029)
+## אחרי
+![DELETE 2 אחרי](https://github.com/user-attachments/assets/f49f7378-8710-44c6-a902-3fdfad6fdc35)
 
 
 ---
@@ -81,8 +90,14 @@ WHERE table_id NOT IN (
   SELECT table_id FROM Orders
 );
 ```
+## לפני
+![DELETE 2 לפני](https://github.com/user-attachments/assets/0f93889f-9079-42dd-9578-024c294d1ed1)
+## מחיקה
 
 ![מחיקת שולחנות שלא בשימוש](https://github.com/user-attachments/assets/0f0896d6-45dc-489e-a7e1-6ac7bd5a77bf)
+
+## אחרי
+![DELETE 3 אחרי](https://github.com/user-attachments/assets/8cf5dfff-f550-444a-8a0e-7ec16e0e8b3b)
 
 
 ---
