@@ -15,7 +15,8 @@ ALTER TABLE Customer
 ALTER COLUMN full_name SET NOT NULL;
 ```
 
-![תרגיל 2/תמונות שאילתות/constraints/אילוץ NOT NULL.png](images/אילוץ%20NOT%20NULL.png)
+![אילוץ NOT NULL](https://github.com/user-attachments/assets/a4a60f43-a7a4-49fc-b49a-f8335e43c5d3)
+
 
 ---
 
@@ -25,8 +26,8 @@ ALTER COLUMN full_name SET NOT NULL;
 ALTER TABLE Dish DROP CONSTRAINT IF EXISTS chk_price_positive;
 ALTER TABLE Dish ADD CONSTRAINT chk_price_positive CHECK (price >= 0);
 ```
+![אילוץ CHECK](https://github.com/user-attachments/assets/d5c3b827-f205-46cd-b57c-29c506f1aaf2)
 
-![תרגיל 2/תמונות שאילתות/constraints/אילוץ_CHECK.png](images/אילוץ%20CHECK.png)
 
 ---
 
@@ -37,7 +38,8 @@ ALTER TABLE Restaurant_Table
 ALTER COLUMN is_available SET DEFAULT 'Y';
 ```
 
-![תרגיל 2/תמונות שאילתות/constraints/אילוץ DEFAULT.png](images/אילוץ%20DEFAULT.png)
+![אילוץ DEFAULT](https://github.com/user-attachments/assets/d0c3d751-8e99-410f-9a60-73daa37f6497)
+
 
 ---
 
@@ -52,7 +54,8 @@ WHERE dish_id NOT IN (
 );
 ```
 
-![תרגיל 2/תמונות שאילתות/DELETE Queries/מחיקת מנות שלא הוזמנו בכלל.png](images/delete1.png)
+![מחיקת מנות שלא הוזמנו בכלל](https://github.com/user-attachments/assets/4c2365f8-f6a6-4291-bf67-341c1f9e1af8)
+
 
 ---
 
@@ -65,7 +68,8 @@ WHERE price > 100 AND dish_id NOT IN (
 );
 ```
 
-![תרגיל 2/תמונות שאילתות/DELETE Queries/מחיקת מנות יקרות שלא הוזמנו.png](images/delete2.png)
+![מחיקת מנות יקרות שלא הוזמנו](https://github.com/user-attachments/assets/4665d918-b815-4b99-9483-b3b1436b0029)
+
 
 ---
 
@@ -78,7 +82,8 @@ WHERE table_id NOT IN (
 );
 ```
 
-![תרגיל 2/תמונות שאילתות/DELETE Queries/מחיקת טבלאות שלא בשימוש.png](images/delete3.png)
+![מחיקת שולחנות שלא בשימוש](https://github.com/user-attachments/assets/0f0896d6-45dc-489e-a7e1-6ac7bd5a77bf)
+
 
 ---
 
@@ -95,8 +100,8 @@ GROUP BY c.customer_id, c.full_name, c.email
 ORDER BY orders_count DESC;
 ```
 
-![select1](![סכום הכנסות כל מלצר לפי שנה](https://github.com/user-attachments/assets/6d28c92d-b6a1-43a1-85dc-3f1a3ec9f193)
-תרגיל 2/תמונות שאילתות/Queries/לקוחות שהזמינו בחודש אפריל.png)
+
+![לקוחות שהזמינו בחודש אפריל](https://github.com/user-attachments/assets/c7e7e5ce-6208-4267-ad30-8f5fb334c2c1)
 
 ---
 
@@ -110,7 +115,8 @@ GROUP BY e.name, year
 ORDER BY income DESC;
 ```
 
-![select2](images/select2.png)
+![סכום הכנסות כל מלצר לפי שנה](https://github.com/user-attachments/assets/312f97a2-88ef-4fc6-b5cf-2859baf2e8d8)
+
 
 ---
 
@@ -124,7 +130,8 @@ GROUP BY d.category
 ORDER BY avg_quantity DESC;
 ```
 
-![select3](images/select3.png)
+![ממוצע כמות מנה בהזמנות עם קטגוריה מסוימת](https://github.com/user-attachments/assets/547c4a0c-8b29-496f-ae17-2a419dcf0539)
+
 
 ---
 
@@ -136,7 +143,8 @@ FROM Restaurant_Table
 WHERE last_cleaned < CURRENT_DATE - INTERVAL '7 days';
 ```
 
-![select4](images/select4.png)
+![טבלאות שלא נוקו יותר מ-7 ימים](https://github.com/user-attachments/assets/015b65a0-bdae-4194-a617-78862db9de69)
+
 
 ---
 
@@ -149,7 +157,8 @@ LEFT JOIN Order_Details od ON d.dish_id = od.dish_id
 WHERE od.order_id IS NULL AND d.is_vegan = 'Y';
 ```
 
-![select5](images/select5.png)
+![מנות טבעוניות שלא הוזמנו כלל](https://github.com/user-attachments/assets/4c254ec9-8e4e-46be-8394-6a58074cdaf7)
+
 
 ---
 
@@ -162,7 +171,8 @@ JOIN Customer c ON o.customer_id = c.customer_id
 WHERE EXTRACT(DOW FROM o.order_date) = 0;
 ```
 
-![select6](images/select6.png)
+![הזמנות שבוצעו ביום ראשון](https://github.com/user-attachments/assets/91119373-8d64-4f53-ac28-5695b74d540a)
+
 
 ---
 
@@ -176,7 +186,8 @@ GROUP BY c.customer_id, c.full_name
 HAVING SUM(o.total_amount) > 50;
 ```
 
-![select7](images/select7.png)
+![לקוחות שהוציאו מעל 50 שח](https://github.com/user-attachments/assets/d1af2c4f-083a-403a-824b-02ef9e3245e1)
+
 
 ---
 
@@ -193,7 +204,8 @@ WHERE o.order_date = (
 );
 ```
 
-![select8](images/select8.png)
+![הזמנות אחרונות שבוצעו על ידי כל לקוח](https://github.com/user-attachments/assets/095601f8-f821-474f-b191-60a44643571c)
+
 
 ---
 
@@ -209,7 +221,8 @@ ROLLBACK;
 SELECT * FROM Dish;
 ```
 
-![rollback](images/rollback.png)
+![עדכון זמני עם ROLLBACK](https://github.com/user-attachments/assets/5b70355b-4708-48f3-b0cd-fd9ff40bd075)
+
 
 ---
 
@@ -223,7 +236,8 @@ COMMIT;
 SELECT * FROM Dish;
 ```
 
-![commit](images/commit.png)
+![עדכון עם COMMIT](https://github.com/user-attachments/assets/91d3c695-a598-4368-92ad-464cc788ab68)
+
 
 ---
 
@@ -243,7 +257,8 @@ WHERE employee_id IN (
 );
 ```
 
-![update1](images/update1.png)
+![העלאת שכר לעובדים עם פחות מ-10 הזמנות](https://github.com/user-attachments/assets/6b74ff59-5aa4-4c10-b5a1-0e52048148d9)
+
 
 ---
 
@@ -255,7 +270,8 @@ SET status = 'archived'
 WHERE order_date < CURRENT_DATE - INTERVAL '6 months' AND status = 'open';
 ```
 
-![update2](images/update2.png)
+![שינוי סטטוס להזמנות ישנות](https://github.com/user-attachments/assets/8fca0640-e32d-47b8-a18b-e3bcb1229279)
+
 
 ---
 
@@ -267,7 +283,8 @@ SET is_available = 'N'
 WHERE last_cleaned < CURRENT_DATE - INTERVAL '7 days';
 ```
 
-![update3](images/update3.png)
+
+![עדכון זמינות שלחנות שלא נוקו](https://github.com/user-attachments/assets/13a2bcbf-c4bb-4cd7-918c-d87fb86e5140)
 
 
 
