@@ -95,7 +95,8 @@ GROUP BY c.customer_id, c.full_name, c.email
 ORDER BY orders_count DESC;
 ```
 
-![select1](תרגיל 2/תמונות שאילתות/Queries/לקוחות שהזמינו בחודש אפריל.png)
+![select1](![סכום הכנסות כל מלצר לפי שנה](https://github.com/user-attachments/assets/6d28c92d-b6a1-43a1-85dc-3f1a3ec9f193)
+תרגיל 2/תמונות שאילתות/Queries/לקוחות שהזמינו בחודש אפריל.png)
 
 ---
 
