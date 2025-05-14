@@ -256,11 +256,13 @@ WHERE employee_id IN (
   HAVING COUNT(o.order_id) < 10
 );
 ```
+## לפני
 ![UPDATE 1 לפני](https://github.com/user-attachments/assets/f1b4212a-a5ae-41f4-9ea5-966da74a1645)
 
-
+## עדכון
 ![העלאת שכר לעובדים עם פחות מ-10 הזמנות](https://github.com/user-attachments/assets/6b74ff59-5aa4-4c10-b5a1-0e52048148d9)
 
+## אחרי
 ![UPDATE 1 אחרי](https://github.com/user-attachments/assets/a09335f3-5b22-40ab-a720-0db7b1d3e5d9)
 
 
@@ -273,10 +275,12 @@ UPDATE Orders
 SET status = 'archived'
 WHERE order_date < CURRENT_DATE - INTERVAL '6 months' AND status = 'open';
 ```
+## לפני 
 ![UPDATE 2 לפני](https://github.com/user-attachments/assets/26dd2099-dcb6-4ae8-8f88-d031c672817c)
 
-
+## עדכון
 ![שינוי סטטוס להזמנות ישנות](https://github.com/user-attachments/assets/8fca0640-e32d-47b8-a18b-e3bcb1229279)
+## אחרי
 ![UPDATE 2 אחרי](https://github.com/user-attachments/assets/556f453e-603a-4de4-b9d3-bb9b9b0d7fe2)
 
 
@@ -289,10 +293,12 @@ UPDATE Restaurant_Table
 SET is_available = 'N'
 WHERE last_cleaned < CURRENT_DATE - INTERVAL '7 days';
 ```
+## לפני
 ![UPDATE 3 לפני](https://github.com/user-attachments/assets/58fc5fac-5fdf-4963-9439-c3e80f38fad5)
 
-
+## עדכון
 ![עדכון זמינות שלחנות שלא נוקו](https://github.com/user-attachments/assets/13a2bcbf-c4bb-4cd7-918c-d87fb86e5140)
+## אחרי
 ![UPDATE 3 אחרי](https://github.com/user-attachments/assets/ba246e2a-2537-4300-aabe-f0e4fcafff02)
 
 
