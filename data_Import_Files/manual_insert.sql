@@ -27,3 +27,11 @@ INSERT INTO Orders VALUES (503, 1003, 303, 403, '2025-04-08', 'Cancelled', 0.00)
 INSERT INTO Order_Details VALUES (501, 201, 2, 'Extra sauce');
 INSERT INTO Order_Details VALUES (501, 203, 1, 'No nuts');
 INSERT INTO Order_Details VALUES (502, 202, 1, 'No dressing');
+
+
+--Payment
+INSERT INTO Payment VALUES  (1,'Card', 'Pending', '2024-06-02', 501);
+INSERT INTO Payment VALUES  (2,'Cash', 'Paid', '2024-06-01', 502);
+INSERT INTO Payment VALUES  (3,'Card', 'Pending', '2024-06-02', 503);
+
+
