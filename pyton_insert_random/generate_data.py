@@ -25,8 +25,12 @@ sql_lines = []
 # 1. Customer
 sql_lines.append("-- Customer")
 for i in range(1, NUM_ROWS + 1):
+    full_name = fake.name()[:20].replace("'", "''")
+    phone = fake.phone_number()[:20]
+    email = fake.email()
+    join_date = rand_date()
     sql_lines.append(
-        f"INSERT INTO Customer VALUES ({i}, '{fake.name()}', '{fake.phone_number()}', '{fake.email()}', '{rand_date()}');"
+        f"INSERT INTO Customer VALUES ({i}, '{full_name}', '{phone}', '{email}', '{join_date}');"
     )
 
 # 2. Dish
@@ -79,6 +83,20 @@ for _ in range(NUM_ROWS):
     note = fake.sentence(nb_words=3).replace("'", "''")
     sql_lines.append(
         f"INSERT INTO Order_Details VALUES ({order_id}, {dish_id}, {quantity}, '{note}');"
+    )
+
+# 7. Payment
+sql_lines.append("-- Payment")
+payment_methods = ['Cash', 'Card', 'PayPal']
+payment_statuses = ['Paid', 'Pending', 'Failed']
+
+for i in range(start, NUM_ROWS + 1):
+    method = random.choice(payment_methods)[:20]
+    status = random.choice(payment_statuses)[:20]
+    payment_date = rand_date(2024, 2025)
+    order_id = i  # Assumes each payment corresponds to an order
+    sql_lines.append(
+        f"INSERT INTO Payment VALUES ({i}, '{method}', '{status}', '{payment_date}', {order_id});"
     )
 
 # Save to file
