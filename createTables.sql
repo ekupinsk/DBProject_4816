@@ -55,3 +55,13 @@ CREATE TABLE Order_Details (
   FOREIGN KEY (dish_id) REFERENCES Dish(dish_id),
   FOREIGN KEY (order_id) REFERENCES Orders(order_id)
 );
+
+CREATE TABLE Payment (
+  payment_id INT NOT NULL,
+  payment_method VARCHAR(20) NOT NULL,   -- לדוגמה: 'Cash', 'Card'
+  payment_status VARCHAR(20) NOT NULL,   -- לדוגמה: 'Paid', 'Pending'
+  payment_date DATE NOT NULL,
+  order_id INT NOT NULL,
+  PRIMARY KEY (payment_id), 
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+);
