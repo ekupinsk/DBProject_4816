@@ -90,7 +90,7 @@ sql_lines.append("-- Payment")
 payment_methods = ['Cash', 'Card', 'PayPal']
 payment_statuses = ['Paid', 'Pending', 'Failed']
 
-for i in range(start, NUM_ROWS + 1):
+for i in range(1, NUM_ROWS + 1):
     method = random.choice(payment_methods)[:20]
     status = random.choice(payment_statuses)[:20]
     payment_date = rand_date(2024, 2025)
