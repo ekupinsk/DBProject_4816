@@ -17,15 +17,17 @@
 - מתוך קובץ ה־SQL שנוצר בתהליך השחזור (`createTable.sql`) חילצנו את מבנה הטבלאות.
 - יצרנו דיאגרמת DSD באמצעות ERDPlus שתייצג את המבנה של האולם בצורה גרפית.
 
----![DSD](https://github.com/user-attachments/assets/75c75a87-98df-4336-9b40-a2f9ddad1b22)
+---
+![DSD](https://github.com/user-attachments/assets/75c75a87-98df-4336-9b40-a2f9ddad1b22)
 
 
 ## 🔁 שלב 3: יצירת ERD על פי DSD (Reverse Engineering)
 - ביצענו היפוך הנדסה (reverse engineering) מה־DSD אל ERD.
 - זיהינו ישויות, קשרים, מפתחות ראשיים וזרים.
+---
 ![erd ](https://github.com/user-attachments/assets/835bbeb7-ae75-408b-9cd9-4cd4b75b589d)
 
----
+
 
 ## 🔗 שלב 4: יצירת ERD משולב
 - חיברנו בין מערכת המסעדה ומערכת האולם.
@@ -35,19 +37,22 @@
 1. `Customer_Link(customer_id, cus_id)` – לקשר בין לקוח של המסעדה ללקוח של האולם.
 2. `Also_Works_As(employee_id, emp_id)` – לקשר בין עובדים במערכות.
 3. `Order_Event_Link(order_id, event_id)` – לקשר בין הזמנות מהמסעדה לאירועים באולם.
-![image](https://github.com/user-attachments/assets/a4fcb928-5fc6-4cc0-9dd5-0ef3f3e04f8a)
 
 
 ---
+![image](https://github.com/user-attachments/assets/a4fcb928-5fc6-4cc0-9dd5-0ef3f3e04f8a)
+
+
 
 ## 🧩 שלב 5: יצירת סכמת אינטגרציה (Integrate.sql)
 - יצרנו קובץ SQL שמכיל **רק את טבלאות הקישור**.
 - לא נגעו טבלאות מקוריות – כל האינטגרציה נעשתה דרך הוספה בלבד.
 - הקובץ כולל פקודות `CREATE TABLE` עם מפתחות זרים לשמירה על עקביות.
+
+---
 ![אנטגרציה](https://github.com/user-attachments/assets/ec842619-f155-4aa1-837c-7bcfdb18efae)
 ![DSD](https://github.com/user-attachments/assets/d53a8c41-067d-4876-9f32-14a2600dfa1c)
 
----
 
 ## 🧪 שלב 6: הזנת נתונים
 - יצרנו נתונים לכל הטבלאות של מערכת האולם:
@@ -60,11 +65,10 @@
   - הזמנות ספקים (Vendor_Orders)
 - הקובץ `sample_data_for_friend.sql` כולל `INSERT INTO` עם מפתחות תקינים.
 - בנוסף, יצרנו 50 שורות לטבלאות החיבור (`Customer_Link`, `Also_Works_As`, `Order_Event_Link`) בקובץ `insert_links_data_fixed.sql`, עם ערכים בטווח 1–10, כדי להתאים לנתונים הקיימים.
+---
 ![image](https://github.com/user-attachments/assets/3d12eaf8-580f-40af-acd5-dfefaf07de14)
 ![image](https://github.com/user-attachments/assets/007f522a-1180-4c9f-9ed3-4015fbf2aa7b)
 ![image](https://github.com/user-attachments/assets/7e5ad12a-a644-47c7-b24b-71761a03a7d2)
-
----
 
 ## 👁️ שלב 7: יצירת VIEWs ושאילתות
 
@@ -74,7 +78,7 @@
 ```sql
 CREATE VIEW restaurant_orders_summary AS
 SELECT o.order_id, c.full_name, o.order_date,
-       SUM(od.quantity * d.price) AS total_price
+       SUM(od.quantity * d.price) AS total
 FROM Orders o
 JOIN Customer c ON o.customer_id = c.customer_id
 JOIN Order_Details od ON o.order_id = od.order_id
@@ -85,7 +89,7 @@ GROUP BY o.order_id, c.full_name, o.order_date;
 
 **שאילתות:**
 ```sql
-SELECT * FROM restaurant_orders_summary WHERE total_price > 200;
+SELECT * FROM restaurant_orders_summary WHERE total > 200;
 SELECT AVG(total_price) FROM restaurant_orders_summary;
 ```
 ![שאילתה 1 – הזמנות מעל 200 ](https://github.com/user-attachments/assets/9fe442a4-8979-4c52-b4c1-a5178131e746)
@@ -110,6 +114,8 @@ JOIN Halls h ON e.hall_id = h.hall_id;
 SELECT * FROM hall_event_summary WHERE total_price > 10000;
 SELECT * FROM hall_event_summary WHERE hall_name = 'Hall_1';
 ```
+![שאילתה 1 – כל האירועים באולם מסוים](https://github.com/user-attachments/assets/0920749d-3e8b-4709-aefc-bca366cdcf38)
+
 ![שאילתה 2 – אירועים יקרים מ־10,000](https://github.com/user-attachments/assets/27550995-87da-403f-a357-10ae1c32cf34)
 
 ---
@@ -127,6 +133,7 @@ JOIN Customers cu ON cl.cus_id = cu.cus_id
 LEFT JOIN Events e ON cu.cus_id = e.cus_id
 LEFT JOIN Orders o ON c.customer_id = o.customer_id;
 ```
+![View 3 – אינטגרטיבי](https://github.com/user-attachments/assets/6ab6c3ea-667a-4a62-8dbb-a7969b4926bc)
 
 **שאילתות:**
 ```sql
@@ -139,6 +146,9 @@ FROM linked_customers_events_orders
 WHERE event_id IS NOT NULL
 GROUP BY restaurant_name;
 ```
+
+![שאילתה 1 – לקוחות שהיו גם במסעדה וגם באולם](https://github.com/user-attachments/assets/9bdb4607-1854-49a5-b782-fcf193549f87)
+![שאילתה 2 – סכום ההזמנה במסעדה ללקוחות עם אירוע באולם](https://github.com/user-attachments/assets/eb2b0923-41ed-4e6b-8bda-818429375597)
 
 ---
 
