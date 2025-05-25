@@ -26,6 +26,7 @@
   - עובדים
   - הזמנות
   - שאילתות ופרוצדורות
+
 ![Main Menu](https://github.com/user-attachments/assets/a4786078-bf83-476f-9159-3dfddfda7546)
 
 ### 👤 מסך ניהול לקוחות
